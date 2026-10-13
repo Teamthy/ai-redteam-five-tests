@@ -1,4 +1,4 @@
-# # AI red-team five tests
+## AI red-team five tests
 
 This repo contains a runnable version of the five failure checks described in
 **"The five boring failures that will ship with your AI feature"**. It points at
