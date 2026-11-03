@@ -1,0 +1,13 @@
+﻿# SHA-256 manifest and identifiers, run 2, 3 November 2026
+
+d9a9b0669262f9c7ab745c04c2af0f1fe63838c3d660752b0de99c390fe0e83f  results.json
+4889096bc551a89116ee8e830ab6e9f896b39e4e1d8f6149800acdf1983bd81b  console.log
+540cf2abfa2643143d0c84b12c40d3e8f324a3bd6c84e5620124f8282049cff9  redteam.py  [CRLF working tree]
+
+6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581  redteam.py  [LF blob content]
+
+commit  d95a57e3d5bfcad847b5d5d05d5beab1a49e8ba6
+100644 blob d39a4bedd4e00ba1c67be67b630cf8e28f664ec1	redteam.py
+
+# SHA-256 values are of the files as they exist in this working tree. Windows checkout applies
+# CRLF conversion, which changes the digest without changing content. The blob id is canonical.
