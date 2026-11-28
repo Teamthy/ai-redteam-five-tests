@@ -1,0 +1,19 @@
+commit-gate-core HEAD 610d155232fbc3f590ed40656e48403ef4d20dcf
+python 3.11.18
+
+[1] No asymmetric signature: whoever can verify can also issue
+    approval minted by the verifying side -> AUTHORIZED
+    hasattr(verifier, 'sign') = True
+
+[2a] No durable spent-approval record: replay after a restart
+    first use                         -> AUTHORIZED
+    replay, same ledger               -> DENY:NONCE_REPLAYED
+    replay, fresh ledger (restart)    -> AUTHORIZED
+
+[2b] Same approval at two workers that each hold their own ledger
+    worker 1 -> AUTHORIZED   worker 2 -> AUTHORIZED
+
+SUMMARY
+    gap 1 shown  (verifier key mints approvals): True
+    gap 2 shown  (one-use approval accepted twice across ledgers): True
+    control held (same-ledger replay refused): True
