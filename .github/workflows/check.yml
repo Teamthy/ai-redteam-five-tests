@@ -1,0 +1,41 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      - name: Dry run prints every input without an API call
+        run: python redteam.py --dry-run
+
+      - name: Full run against a local fake endpoint
+        run: python tests/smoke_test.py
+
+      - name: The 3 November record matches its published hashes
+        working-directory: review/2026-11-03_run2
+        run: |
+          test "$(sha256sum results.json | cut -d' ' -f1)" = d9a9b0669262f9c7ab745c04c2af0f1fe63838c3d660752b0de99c390fe0e83f
+          test "$(git show d95a57e:redteam.py | sha256sum | cut -d' ' -f1)" = 6048b70aadfe2750ff463d283b0fd34e92aee19999ee386a097e02b79bdf7581
+          python check_results.py results.json
+
+      - name: Independent run files are as published
+        working-directory: independent-runs/2026-11-28_commit-gate-core
+        run: sha256sum -c SHA256SUMS
