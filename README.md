@@ -75,12 +75,24 @@ python redteam.py --only 1 4
 `--dry-run` is useful for seeing exactly what gets sent and what detector is used,
 without spending a single token.
 
+### Checking the harness itself
+
+```bash
+python tests/smoke_test.py
+```
+
+This runs the whole harness against a fake endpoint on your own machine. You
+don't need an API key or a network. It fails if the run exits non-zero, if a
+result file is missing, or if `results.json` doesn't say what produced it.
+CI runs it on every push, next to the dry run and the hash checks on the
+3 November record below.
+
 ## Reading the results
 
 The tool writes outputs to:
 
-- `results/results.md` — a human-readable report with the metric table and raw responses
-- `results/results.json` — the full structured run data
+- `results/results.md`: a human-readable report with the metric table and raw responses
+- `results/results.json`: the full structured run data
 
 The fired counts come from **heuristic detectors**. They flag likely failures.
 Read the raw response and confirm each `[BROKE]` with your own eyes before you
@@ -137,6 +149,16 @@ untrusted content, authority, money and limits, failure paths, and disclosure.
 This repo covers the first family and part of the last. It has nothing on
 authority, money and limits, or failure paths, because those need an agent
 whose tools act on an account, and the sample bot here only talks.
+
+## What's in the repo
+
+| Path | What it is |
+|---|---|
+| `redteam.py` | The harness. One file, one dependency (`openai`) |
+| `tests/smoke_test.py` | End-to-end run against a local fake endpoint |
+| `review/2026-11-03_run2/` | The published 3 November run, with hashes and a checker |
+| `independent-runs/` | Runs of other people's test guides, each with a receipt |
+| `SECURITY.md` | How to report a problem, and what to point the harness at |
 
 ## Honesty and methodology
 
