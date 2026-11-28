@@ -41,4 +41,4 @@ To rerun: `python3.11 -I scripts/gap_probe.py <checkout at 610d155>` (output in 
 
 ## Not covered
 
-macOS and Windows weren't run in this pass. `WINDOWS_RUNBOOK.md` sets out a Windows PowerShell run of the same guide. The text of issue 33 wasn't read.
+macOS and Windows weren't run in this pass. `windows/README.md` sets out a Windows PowerShell run of the same guide. The text of issue 33 wasn't read.

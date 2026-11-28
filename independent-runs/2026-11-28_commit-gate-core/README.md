@@ -10,8 +10,6 @@ The guide's 12 tests pass on Python 3.11 and on 3.13. I found two places a stran
 | `FINDINGS.md` | What I ran, what happened, where a stranger trips, and the issue 33 probes |
 | `scripts/guide_section_2a.sh` | Section 2a of REPRODUCE.md at 4e9e9a5, verbatim |
 | `scripts/collection_check.sh` | Shows that test_authorize.py collects only under `python -m` |
-| `scripts/guide_section_2b.ps1` | Section 2b of REPRODUCE.md at 4e9e9a5, verbatim, for the Windows run |
-| `scripts/collection_check.ps1` | Windows version of `collection_check.sh` |
 | `scripts/gap_probe.py` | Shows both issue 33 gaps (about 150 lines, standard library plus the package) |
 | `logs/` | Output of each run. The temp folder appears as `$TEST_ROOT` |
 | `windows/` | Runbook and script for a second run on Windows PowerShell (not run yet) |
