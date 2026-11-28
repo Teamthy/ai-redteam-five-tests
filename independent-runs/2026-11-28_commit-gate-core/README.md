@@ -14,7 +14,7 @@ The guide's 12 tests pass on Python 3.11 and on 3.13. I found two places a stran
 | `scripts/collection_check.ps1` | Windows version of `collection_check.sh` |
 | `scripts/gap_probe.py` | Shows both issue 33 gaps (about 150 lines, standard library plus the package) |
 | `logs/` | Output of each run. The temp folder appears as `$TEST_ROOT` |
-| `WINDOWS_RUNBOOK.md` | Steps for a second run of the same guide in Windows PowerShell |
+| `windows/` | Runbook and script for a second run on Windows PowerShell (not run yet) |
 | `SHA256SUMS` | Checksums for every file above |
 
 ## Check it in 10 minutes (Linux or macOS, Python 3.11+)
