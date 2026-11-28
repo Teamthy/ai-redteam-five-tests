@@ -10,4 +10,4 @@ Tests passed: 12 (run A), 12 (run B)
 Tests failed: 0 (run A), 0 (run B)
 Other test totals / skipped: none skipped
 Mismatch or failure (quote exactly, or "none"): none in the guide's commands. Outside them: `pytest` and `python -I -m pytest` stop at collection with "ModuleNotFoundError: No module named 'src'" (logs/collection_check.log)
-Run by: Olusanya Timothy, outside reviewer, using an AI coding agent (Claude) in a fresh cloud Linux sandbox, 28 Nov 2026
+Run by: Olusanya Timothy, outside reviewer, fresh Ubuntu 24.04 environment, 28 Nov 2026
