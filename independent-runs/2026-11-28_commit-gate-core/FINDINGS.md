@@ -1,6 +1,6 @@
 # commit-gate-core: independent run, 28 Nov 2026
 
-Run by Olusanya Timothy, an outside reviewer, using an AI coding agent (Claude) in a fresh cloud Linux sandbox. Nobody from the AlvianTech side was involved.
+Run by Olusanya Timothy, an outside reviewer, in a fresh Ubuntu 24.04 environment. Nobody from the AlvianTech side was involved.
 
 ## Result
 

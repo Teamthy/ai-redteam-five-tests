@@ -12,6 +12,7 @@ The guide's 12 tests pass on Python 3.11 and on 3.13. We found two places a stra
 | `scripts/collection_check.sh` | Shows that test_authorize.py collects only under `python -m` |
 | `scripts/gap_probe.py` | Shows both issue 33 gaps (about 150 lines, standard library plus the package) |
 | `logs/` | Output of each run. The temp folder appears as `$TEST_ROOT` |
+| `windows/` | Runbook and script for a second run on Windows PowerShell (not run yet) |
 | `SHA256SUMS` | Checksums for every file above |
 
 ## Check it in 10 minutes (Linux or macOS, Python 3.11+)
