@@ -144,3 +144,9 @@ Nothing in this repo is a fabricated result. The detectors are labeled as
 heuristics, the raw responses are written out, and the metric always carries the
 sample size. If you share your numbers, they are from a run you did. That is the
 whole point.
+
+## Independent runs
+
+Runs of other people's published test guides, each with a receipt, logs and scripts that a stranger can check in about ten minutes.
+
+- [2026-11-28: commit-gate-core](independent-runs/2026-11-28_commit-gate-core/README.md). 12 of 12 pass on Python 3.11 and 3.13, two places the guide trips, and the two gaps from issue 33 shown on a local copy.

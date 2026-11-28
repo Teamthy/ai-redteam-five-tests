@@ -1,0 +1,96 @@
++ set -eu
++ target=610d155232fbc3f590ed40656e48403ef4d20dcf
+++ mktemp -d
++ test_root=$TEST_ROOT
++ git clone --no-checkout https://github.com/LalaSkye/commit-gate-core.git $TEST_ROOT/repo
+Cloning into '$TEST_ROOT/repo'...
++ git -C $TEST_ROOT/repo fetch origin 610d155232fbc3f590ed40656e48403ef4d20dcf
+From https://github.com/LalaSkye/commit-gate-core
+ * branch            610d155232fbc3f590ed40656e48403ef4d20dcf -> FETCH_HEAD
++ git -C $TEST_ROOT/repo checkout --detach 610d155232fbc3f590ed40656e48403ef4d20dcf
+HEAD is now at 610d155 test: report audit and rollback failure (CCG-T02f M16)
+++ git -C $TEST_ROOT/repo rev-parse HEAD
++ test 610d155232fbc3f590ed40656e48403ef4d20dcf = 610d155232fbc3f590ed40656e48403ef4d20dcf
+++ git -C $TEST_ROOT/repo status --porcelain
++ test -z ''
++ git -C $TEST_ROOT/repo rev-parse HEAD
+610d155232fbc3f590ed40656e48403ef4d20dcf
++ python3 -m venv $TEST_ROOT/venv
++ . $TEST_ROOT/venv/bin/activate
+++ deactivate nondestructive
+++ '[' -n '' ']'
+++ '[' -n '' ']'
+++ hash -r
+++ '[' -n '' ']'
+++ unset VIRTUAL_ENV
+++ unset VIRTUAL_ENV_PROMPT
+++ '[' '!' nondestructive = nondestructive ']'
+++ VIRTUAL_ENV=$TEST_ROOT/venv
+++ export VIRTUAL_ENV
+++ _OLD_VIRTUAL_PATH=$SHIM311:/usr/local/bin:/usr/bin:/bin
+++ PATH=$TEST_ROOT/venv/bin:$SHIM311:/usr/local/bin:/usr/bin:/bin
+++ export PATH
+++ '[' -n '' ']'
+++ '[' -z '' ']'
+++ _OLD_VIRTUAL_PS1=
+++ PS1='(venv) '
+++ export PS1
+++ VIRTUAL_ENV_PROMPT='(venv) '
+++ export VIRTUAL_ENV_PROMPT
+++ hash -r
++ python --version
+Python 3.11.18
++ python -m pip install --upgrade build pytest
+Collecting build
+  Using cached build-1.6.1-py3-none-any.whl.metadata (5.6 kB)
+Collecting pytest
+  Using cached pytest-9.2.0-py3-none-any.whl.metadata (7.9 kB)
+Collecting packaging>=24.0 (from build)
+  Using cached packaging-26.4-py3-none-any.whl.metadata (3.5 kB)
+Collecting pyproject_hooks (from build)
+  Using cached pyproject_hooks-1.3.3-py3-none-any.whl.metadata (1.3 kB)
+Collecting iniconfig>=2 (from pytest)
+  Using cached iniconfig-2.3.1-py3-none-any.whl.metadata (2.8 kB)
+Collecting pluggy<2,>=1.6 (from pytest)
+  Using cached pluggy-1.7.0-py3-none-any.whl.metadata (5.0 kB)
+Collecting pygments>=2.15 (from pytest)
+  Using cached pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Using cached build-1.6.1-py3-none-any.whl (31 kB)
+Using cached pytest-9.2.0-py3-none-any.whl (411 kB)
+Using cached iniconfig-2.3.1-py3-none-any.whl (7.6 kB)
+Using cached packaging-26.4-py3-none-any.whl (140 kB)
+Using cached pluggy-1.7.0-py3-none-any.whl (27 kB)
+Using cached pygments-2.21.0-py3-none-any.whl (1.3 MB)
+Using cached pyproject_hooks-1.3.3-py3-none-any.whl (10 kB)
+Installing collected packages: pyproject_hooks, pygments, pluggy, packaging, iniconfig, pytest, build
+Successfully installed build-1.6.1 iniconfig-2.3.1 packaging-26.4 pluggy-1.7.0 pygments-2.21.0 pyproject_hooks-1.3.3 pytest-9.2.0
+
+[notice] A new release of pip is available: 24.0 -> 26.3
+[notice] To update, run: pip install --upgrade pip
++ python -m pip show build pytest
+Name: build
+Version: 1.6.1
+Summary: A simple, correct Python build frontend
+Home-page: 
+Author: 
+Author-email: Filipe Laíns <lains@riseup.net>, Bernát Gábor <gaborjbernat@gmail.com>, layday <layday@protonmail.com>, Henry Schreiner <henryschreineriii@gmail.com>
+License: 
+Location: $TEST_ROOT/venv/lib/python3.11/site-packages
+Requires: packaging, pyproject_hooks
+Required-by: 
+---
+Name: pytest
+Version: 9.2.0
+Summary: pytest: simple powerful testing with Python
+Home-page: 
+Author: Brianna Laugher, Bruno Oliveira, Floris Bruynooghe, Freya Bruhin, Holger Krekel, Others (See AUTHORS), Ronny Pfannschmidt
+Author-email: 
+License: 
+Location: $TEST_ROOT/venv/lib/python3.11/site-packages
+Requires: iniconfig, packaging, pluggy, pygments
+Required-by: 
++ cd $TEST_ROOT/repo
++ PYTHONPATH=src
++ python -m pytest tests/test_authorize.py tests/test_beau_failure_classes.py -q
+............                                                             [100%]
+12 passed in 0.08s

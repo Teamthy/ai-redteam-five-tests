@@ -1,0 +1,13 @@
+Guide revision (commit SHA from the guide permalink): 4e9e9a52f35e2ac6354a1a915b47a3e70b3ab86e
+Tested SHA: 610d155232fbc3f590ed40656e48403ef4d20dcf
+OS and version: Ubuntu 24.04.5 LTS, Linux 6.18 x86_64, git 2.43.0
+Python version: run A 3.13.18, run B 3.11.18
+pip version: run A 26.2.2, run B 24.0 (the guide does not print it; read afterwards with python -m pip --version)
+build version: 1.6.1
+pytest version: 9.2.0
+Exact commands: REPRODUCE.md section 2a, verbatim (scripts/guide_section_2a.sh), run with bash -x. Run B only adds a python3 -> python3.11 symlink first on PATH so the venv is 3.11.
+Tests passed: 12 (run A), 12 (run B)
+Tests failed: 0 (run A), 0 (run B)
+Other test totals / skipped: none skipped
+Mismatch or failure (quote exactly, or "none"): none in the guide's commands. Outside them: `pytest` and `python -I -m pytest` stop at collection with "ModuleNotFoundError: No module named 'src'" (logs/collection_check.log)
+Run by: Olusanya Timothy, outside reviewer, using an AI coding agent (Claude) in a fresh cloud Linux sandbox, 28 Nov 2026
