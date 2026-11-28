@@ -1,13 +1,13 @@
 # Independent run of commit-gate-core, 28 Nov 2026
 
-The guide's 12 tests pass on Python 3.11 and on 3.13. We found two places a stranger trips, and a short script shows the two issue 33 gaps. Allow about 10 minutes to check all of this yourself.
+The guide's 12 tests pass on Python 3.11 and on 3.13. I found two places a stranger trips, and a short script shows the two issue 33 gaps. Allow about 10 minutes to check all of this yourself.
 
 ## What's here
 
 | File | What it is |
 |---|---|
 | `RECEIPT.txt` | The REPRODUCE.md receipt, filled in |
-| `FINDINGS.md` | What we ran, what happened, where a stranger trips, and the issue 33 probes |
+| `FINDINGS.md` | What I ran, what happened, where a stranger trips, and the issue 33 probes |
 | `scripts/guide_section_2a.sh` | Section 2a of REPRODUCE.md at 4e9e9a5, verbatim |
 | `scripts/collection_check.sh` | Shows that test_authorize.py collects only under `python -m` |
 | `scripts/gap_probe.py` | Shows both issue 33 gaps (about 150 lines, standard library plus the package) |
